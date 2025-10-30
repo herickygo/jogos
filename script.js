@@ -1,76 +1,31 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f5f5f5;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-contato");
+    if (!form) return;
 
-header {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        const mensagem = document.getElementById("mensagem");
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
+        const regexEmail = /^[\\w.-]+@[\\w.-]+\\.\\w+$/;
+        const regexTelefone = /^\\(\\d{2}\\) \\d{5}-\\d{4}$/;
 
-nav a:hover {
-    color: #00bcd4;
-}
+        if (!regexEmail.test(email)) {
+            mensagem.textContent = "❌ Email inválido!";
+            mensagem.style.color = "red";
+            return;
+        }
 
-main {
-    padding: 20px;
-    background-color: white;
-    max-width: 800px;
-    margin: 20px auto;
-    border-radius: 10px;
-}
+        if (!regexTelefone.test(telefone)) {
+            mensagem.textContent = "❌ Telefone inválido! Use o formato (99) 99999-9999";
+            mensagem.style.color = "red";
+            return;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 8px;
-}
-
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-button {
-    background-color: #00bcd4;
-    border: none;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0097a7;
-}
+        mensagem.textContent = "✅ Formulário enviado com sucesso!";
+        mensagem.style.color = "green";
+        form.reset();
+    });
+});
