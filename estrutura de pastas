@@ -5,4 +5,10 @@
 ├── esportes.html
 ├── contato.html
 ├── style.css
-└── script.js
+├── script.js
+└── /img/
+    ├── capa-jogos.jpg
+    ├── futebol.jpg
+    ├── logo.png
+    ├── jogo2020.jpg
+    └── jogo2025.jpg
