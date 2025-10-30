@@ -1,69 +1,76 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-    const emailInput = document.getElementById('email');
-    const telefoneInput = document.getElementById('telefone');
-    const emailMsg = document.getElementById('email-msg');
-    const telefoneMsg = document.getElementById('telefone-msg');
-    const formStatus = document.getElementById('form-status');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+}
 
-    // Função de validação de E-mail
-    function validateEmail(email) {
-        // Regex simples para verificar o formato do e-mail
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
-    }
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-    // Função de validação de Telefone (Exemplo: 10 ou 11 dígitos, apenas números, com DDD)
-    function validateTelefone(telefone) {
-        // Remove todos os caracteres não numéricos
-        const cleanTelefone = telefone.replace(/\D/g, '');
-        // Verifica se tem 10 ou 11 dígitos (DDD + 8/9 dígitos)
-        return cleanTelefone.length >= 10 && cleanTelefone.length <= 11;
-    }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-    // Event Listener para o envio do formulário
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Impede o envio padrão do formulário
+nav a {
+    color: white;
+    text-decoration: none;
+}
 
-        let isValid = true;
+nav a:hover {
+    color: #00bcd4;
+}
 
-        // Limpa mensagens de erro e status
-        emailMsg.textContent = '';
-        telefoneMsg.textContent = '';
-        formStatus.textContent = '';
-        formStatus.className = 'status-msg';
+main {
+    padding: 20px;
+    background-color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
 
-        // 1. Validação do E-mail
-        if (!validateEmail(emailInput.value)) {
-            emailMsg.textContent = 'E-mail inválido. Por favor, insira um formato correto (ex: nome@dominio.com).';
-            isValid = false;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
-        // 2. Validação do Telefone
-        if (!validateTelefone(telefoneInput.value)) {
-            telefoneMsg.textContent = 'Telefone inválido. Deve conter 10 ou 11 dígitos (ex: 11987654321).';
-            isValid = false;
-        }
+table, th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
 
-        // 3. Processamento do Formulário
-        if (isValid) {
-            // Aqui você faria o envio real dos dados (ex: usando fetch() para uma API/backend)
-            
-            formStatus.textContent = '✅ Mensagem enviada com sucesso! Em breve entraremos em contato.';
-            formStatus.classList.add('success');
-            form.reset(); // Limpa o formulário após o sucesso
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
 
-            // Opcional: Log dos dados para visualização no console
-            console.log('--- Dados Enviados ---');
-            console.log('Nome:', document.getElementById('nome').value);
-            console.log('E-mail:', emailInput.value);
-            console.log('Telefone:', telefoneInput.value);
-            console.log('Mensagem:', document.getElementById('mensagem').value);
-            console.log('------------------------');
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-        } else {
-            formStatus.textContent = '❌ Por favor, corrija os erros no formulário antes de enviar.';
-            formStatus.classList.add('error');
-        }
-    });
-});
+button {
+    background-color: #00bcd4;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0097a7;
+}
