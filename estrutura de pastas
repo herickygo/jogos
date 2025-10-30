@@ -1,14 +1,11 @@
 /meu-site/
 │
 ├── index.html
-├── jogos.html
-├── esportes.html
+├── chatgpt.html
+├── copilot.html
+├── deepseek.html
+├── gemini.html
+├── perplexity.html
 ├── contato.html
 ├── style.css
-├── script.js
-└── /img/
-    ├── capa-jogos.jpg
-    ├── futebol.jpg
-    ├── logo.png
-    ├── jogo2020.jpg
-    └── jogo2025.jpg
+└── script.js
