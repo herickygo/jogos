@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos e Esportes | Seu Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Esse sate e sobre todos tipo de jogos, de jogos esportevos ou mundo de games </h1>
+
+    <header>
+        <h1>🎮 Seu Site de Jogos e Esportes ⚽</h1>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#jogos">Lançamentos (2020-2025)</a>
+            <a href="#esportes">Futebol</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Bem-vindo ao Mundo do Entretenimento!</h2>
+            <p>Seu ponto de encontro para as últimas novidades em jogos e os resultados mais quentes do futebol brasileiro.</p>
+        </section>
+
+        <section id="jogos" class="content-section">
+            <h3>Lançamentos de Jogos (2020 - 2025)</h3>
+            <div class="game-list">
+                <div class="game-card">
+                    <h4>Cyberpunk 2077 (2020)</h4>
+                    <p>Um RPG de ação ambientado em um mundo distópico futurista.</p>
+                </div>
+                <div class="game-card">
+                    <h4>Elden Ring (2022)</h4>
+                    <p>Jogo de RPG de ação e fantasia, aclamado pela crítica.</p>
+                </div>
+                <div class="game-card">
+                    <h4>Grand Theft Auto VI (2025)</h4>
+                    <p>O aguardado lançamento da icônica série de jogos de mundo aberto. (Data e jogo fictícios/esperados)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="esportes" class="content-section">
+            <h3>⚽ Futebol Brasileiro e Sul-Americano 🏆</h3>
+            <p>Aqui você acompanha as principais competições de futebol:</p>
+
+            <div class="tables-container">
+                <article>
+                    <h4>Tabela do Brasileirão (Série A)</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Pos.</th><th>Time</th><th>Pts</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1º</td><td>Flamengo</td><td>50</td></tr>
+                            <tr><td>2º</td><td>Palmeiras</td><td>48</td></tr>
+                            <tr><td>3º</td><td>Botafogo</td><td>45</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article>
+                    <h4>Libertadores e Copa do Brasil</h4>
+                    <ul>
+                        <li>**Libertadores:** Fase de Grupos/Mata-Mata em andamento.</li>
+                        <li>**Copa do Brasil:** Próximos Jogos das Quartas de Final.</li>
+                        <li>(Os dados precisos precisariam de uma API externa para serem atualizados em tempo real.)</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="content-section">
+            <h3>Fale Conosco</h3>
+            <form id="contact-form">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
+                    <small id="email-msg" class="error-msg"></small>
+                </div>
+
+                <div>
+                    <label for="telefone">Telefone (DDD + Número):</label>
+                    <input type="tel" id="telefone" placeholder="Ex: 11987654321" required>
+                    <small id="telefone-msg" class="error-msg"></small>
+                </div>
+
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Enviar Contato</button>
+                <p id="form-status" class="status-msg"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Seu Site de Jogos e Esportes. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
