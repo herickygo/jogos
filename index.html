@@ -3,38 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início | Jogos e Esportes</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <title>Rodrigo Royale - Portal de Fãs</title>
+    <!-- Carregando Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definindo fontes temáticas e cores base */
+        :root {
+            --cr-red: #D55400;
+            --cr-gold: #FFD700;
+            --cr-dark-blue: #2c3e50;
+            --cr-arena: #ecf0f1;
+        }
+        body {
+            font-family: 'Oswald', sans-serif;
+            background-color: var(--cr-arena);
+        }
+        .cr-bg-primary { background-color: var(--cr-red); }
+        .cr-border-secondary { border-color: var(--cr-gold); }
+        .cr-text-secondary { color: var(--cr-gold); }
+        .cr-card-base { 
+            box-shadow: 0 4px 0 var(--cr-dark-blue);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cr-card-base:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--cr-dark-blue);
+        }
+        /* Definição das fontes para simular a temática do jogo */
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+    </style>
 </head>
-<body>
-    <header>
-        <img src="img/logo.png" alt="Logo do site" class="logo">
-        <nav class="navbar">
-            <a href="index.html">Início</a>
-            <a href="jogos.html">Jogos</a>
-            <a href="esportes.html">Esportes</a>
-            <a href="contato.html">Contato</a>
-        </nav>
+<body class="min-h-screen">
+
+    <!-- CABEÇALHO E NAVEGAÇÃO -->
+    <header class="cr-bg-primary text-white border-b-4 cr-border-secondary shadow-lg sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+            <h1 class="text-3xl font-bold tracking-wider cr-text-secondary">👑 Rodrigo Royale</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#inicio" class="nav-link text-xl hover:text-gray-300 transition duration-150 p-2 rounded" data-target="inicio">Início</a></li>
+                    <li><a href="#cartas" class="nav-link text-xl hover:text-gray-300 transition duration-150 p-2 rounded" data-target="cartas">Cartas</a></li>
+                    <li><a href="#decks" class="nav-link text-xl hover:text-gray-300 transition duration-150 p-2 rounded" data-target="decks">Decks</a></li>
+                    <li><a href="#torneios" class="nav-link text-xl hover:text-gray-300 transition duration-150 p-2 rounded" data-target="torneios">Torneios</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero" style="background-image: url('img/capa-jogos.jpg');">
-        <div class="hero-text">
-            <h1>Bem-vindo ao Portal Jogos e Esportes</h1>
-            <p>As últimas notícias do mundo dos games e dos esportes!</p>
-            <a href="jogos.html" class="btn">Explorar Jogos</a>
-        </div>
-    </section>
+    <main class="max-w-6xl mx-auto p-6">
+        
+        <!-- PÁGINA: INÍCIO (inicio.html) -->
+        <section id="inicio" class="page-section">
+            <div class="bg-white p-8 rounded-xl shadow-xl border-t-8 border-yellow-500">
+                <h2 class="text-4xl font-bold mb-4 text-center text-red-700">Bem-vindo à Arena do Rodrigo!</h2>
+                <p class="text-xl text-center mb-8 text-gray-700">Seu portal diário de notícias, decks e estratégias do Clash Royale.</p>
+                
+                <div class="bg-gray-800 text-white p-6 rounded-lg text-center shadow-inner">
+                    <h3 class="text-2xl cr-text-secondary mb-3">Destaque da Semana: Novo Desafio!</h3>
+                    <p class="mb-4">Prepare suas tropas para o **Desafio da Fúria do Gelo**. Entre na batalha e ganhe recompensas épicas!</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-150" onclick="alert('Aberto o desafio! Boa sorte, Clashers!')">
+                        Entrar no Desafio Agora
+                    </button>
+                </div>
+            </div>
 
-    <main>
-        <section class="intro">
-            <h2>O melhor do entretenimento</h2>
-            <p>Fique por dentro dos lançamentos de jogos e acompanhe as maiores competições do futebol brasileiro.</p>
+            <h3 class="text-3xl font-bold mt-10 mb-6 text-center text-gray-800">🔥 Cartas Populares</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Cartas da página inicial (simplificadas) -->
+                <div class="cr-card-base bg-gray-200 p-4 rounded-lg border-2 border-gray-500 text-center">
+                    <h4 class="text-xl font-bold">Goblins</h4>
+                    <p class="text-sm">Custo: 2 Elixir</p>
+                </div>
+                <div class="cr-card-base bg-green-200 p-4 rounded-lg border-2 border-green-600 text-center">
+                    <h4 class="text-xl font-bold">Valquíria</h4>
+                    <p class="text-sm">Custo: 4 Elixir</p>
+                </div>
+                <div class="cr-card-base bg-purple-200 p-4 rounded-lg border-2 border-purple-600 text-center">
+                    <h4 class="text-xl font-bold">Príncipe</h4>
+                    <p class="text-sm">Custo: 5 Elixir</p>
+                </div>
+                <div class="cr-card-base bg-yellow-200 p-4 rounded-lg border-2 border-yellow-600 text-center">
+                    <h4 class="text-xl font-bold">Mago Elétrico</h4>
+                    <p class="text-sm">Custo: 4 Elixir</p>
+                </div>
+            </div>
         </section>
+
+        <!-- PÁGINA: CARTAS (cartas.html) -->
+        <section id="cartas" class="page-section hidden">
+            <h2 class="text-4xl font-bold mb-6 text-red-700 text-center">Enciclopédia de Cartas</h2>
+            <p class="text-center text-lg mb-8">Navegue por todas as tropas, feitiços e construções disponíveis no jogo.</p>
+            
+            <div class="space-y-4">
+                <!-- Exemplo de Listagem de Cartas (com filtros mock) -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between border-l-4 border-yellow-500">
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/60x60/888888/FFFFFF?text=TROPA" alt="Imagem da Carta Gigante" class="w-16 h-16 rounded mr-4">
+                        <div>
+                            <h4 class="text-xl font-bold">Gigante</h4>
+                            <p class="text-gray-600">Alvo de construção, Tanque de alto HP.</p>
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold text-red-600">5 Elixir</span>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between border-l-4 border-purple-600">
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/60x60/888888/FFFFFF?text=FEITIÇO" alt="Imagem da Carta Bola de Fogo" class="w-16 h-16 rounded mr-4">
+                        <div>
+                            <h4 class="text-xl font-bold">Bola de Fogo</h4>
+                            <p class="text-gray-600">Feitiço de dano médio em área.</p>
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold text-red-600">4 Elixir</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between border-l-4 border-blue-600">
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/60x60/888888/FFFFFF?text=CONSTR" alt="Imagem da Carta Tesla" class="w-16 h-16 rounded mr-4">
+                        <div>
+                            <h4 class="text-xl font-bold">Tesla</h4>
+                            <p class="text-gray-600">Defesa que se esconde quando não ataca.</p>
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold text-red-600">4 Elixir</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA: DECKS (deck.html) -->
+        <section id="decks" class="page-section hidden">
+            <h2 class="text-4xl font-bold mb-6 text-red-700 text-center">Estratégias de Decks Vencedores</h2>
+            <p class="text-center text-lg mb-8">Copie o link e domine a Arena com estes decks testados e aprovados!</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- DECK 1: CICLO RÁPIDO -->
+                <div class="cr-card-base bg-white p-6 rounded-xl border-4 border-red-500 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-2xl font-bold text-red-700">Corredor Ciclador</h4>
+                        <img src="https://placehold.co/100x100/D55400/FFFFFF?text=HOG" alt="[Imagem de um Corredor (Hog Rider)]" class="w-20 h-20 rounded-full border-2 border-yellow-500">
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Um deck rápido focado em pressão constante. Gasta pouco elixir e surpreende o oponente.</p>
+                    <div class="flex justify-between items-center text-lg font-semibold">
+                        <span>Custo Médio:</span>
+                        <span class="text-green-600">2.6 Elixir</span>
+                    </div>
+                    <h5 class="text-lg font-bold mt-4 mb-2">Cartas Principais:</h5>
+                    <ul class="text-sm list-disc list-inside space-y-1">
+                        <li>Corredor (Hog Rider)</li>
+                        <li>Espírito de Gelo</li>
+                        <li>Mosqueteira</li>
+                        <li>Relâmpago</li>
+                    </ul>
+                </div>
+
+                <!-- DECK 2: GOLEM E PESADO -->
+                <div class="cr-card-base bg-white p-6 rounded-xl border-4 border-green-500 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-2xl font-bold text-green-700">Golem Big Push</h4>
+                        <img src="https://placehold.co/100x100/4CAF50/FFFFFF?text=GOLEM" alt="[Imagem de um Golem]" class="w-20 h-20 rounded-full border-2 border-yellow-500">
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Deck de "Double Elixir", focado em acumular Golem e tropas de suporte para um ataque devastador.</p>
+                    <div class="flex justify-between items-center text-lg font-semibold">
+                        <span>Custo Médio:</span>
+                        <span class="text-red-600">4.8 Elixir</span>
+                    </div>
+                    <h5 class="text-lg font-bold mt-4 mb-2">Cartas Principais:</h5>
+                    <ul class="text-sm list-disc list-inside space-y-1">
+                        <li>Golem</li>
+                        <li>Bebê Dragão</li>
+                        <li>Lançador de Troncos (O Tronco)</li>
+                        <li>Mago Elétrico</li>
+                    </ul>
+                </div>
+
+                <!-- DECK 3: PEKKA DE CONTROLE -->
+                <div class="cr-card-base bg-white p-6 rounded-xl border-4 border-purple-500 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-2xl font-bold text-purple-700">PEKKA Control</h4>
+                        <img src="https://placehold.co/100x100/9C27B0/FFFFFF?text=PEKKA" alt="[Imagem de uma PEKKA]" class="w-20 h-20 rounded-full border-2 border-yellow-500">
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Focado em defender e contra-atacar. A PEKKA elimina tanques e lança um contra-ataque letal.</p>
+                    <div class="flex justify-between items-center text-lg font-semibold">
+                        <span>Custo Médio:</span>
+                        <span class="text-yellow-600">3.9 Elixir</span>
+                    </div>
+                    <h5 class="text-lg font-bold mt-4 mb-2">Cartas Principais:</h5>
+                    <ul class="text-sm list-disc list-inside space-y-1">
+                        <li>PEKKA</li>
+                        <li>Bandida</li>
+                        <li>Dragão Infernal</li>
+                        <li>Zap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PÁGINA: TORNEIOS (torneios.html) -->
+        <section id="torneios" class="page-section hidden">
+            <h2 class="text-4xl font-bold mb-6 text-red-700 text-center">Calendário de Torneios</h2>
+            <p class="text-center text-lg mb-8">Participe dos eventos exclusivos da comunidade Rodrigo Royale e ganhe prêmios!</p>
+
+            <div class="space-y-6">
+                <!-- Torneio 1 -->
+                <div class="bg-gray-100 p-5 rounded-lg shadow-md flex justify-between items-center border-b-4 border-blue-500">
+                    <div>
+                        <h4 class="text-2xl font-bold text-blue-700">Copa Rodrigo Royale #15</h4>
+                        <p class="text-gray-600">Data: 25 de Dezembro</p>
+                        <p class="text-sm text-gray-500">Formato: Dupla Eliminação, Nível Limite 11</p>
+                    </div>
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-150">
+                        Inscrever-se
+                    </button>
+                </div>
+                
+                <!-- Torneio 2 -->
+                <div class="bg-gray-100 p-5 rounded-lg shadow-md flex justify-between items-center border-b-4 border-yellow-500">
+                    <div>
+                        <h4 class="text-2xl font-bold text-yellow-700">Batalha de Decks Novos</h4>
+                        <p class="text-gray-600">Data: 10 de Janeiro</p>
+                        <p class="text-sm text-gray-500">Formato: 1v1, Use 4 Cartas Recém-Lançadas</p>
+                    </div>
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-150">
+                        Inscrever-se
+                    </button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Jogos e Esportes | Desenvolvido com ❤️</p>
+    <footer class="text-center p-4 mt-10 text-sm cr-bg-primary text-gray-200 border-t-4 cr-border-secondary">
+        <p>Rodrigo Royale é um portal de fãs. Clash Royale é marca registrada da Supercell. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Lógica JavaScript para navegação de "página única"
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.page-section');
+            const defaultSectionId = 'inicio';
+
+            function showSection(targetId) {
+                // Oculta todas as seções
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Mostra a seção alvo
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+
+                // Atualiza o estado visual do link de navegação
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-target') === targetId) {
+                        link.classList.add('underline', 'font-bold');
+                        link.classList.remove('text-white');
+                        link.classList.add('cr-text-secondary'); // Cor de destaque
+                    } else {
+                        link.classList.remove('underline', 'font-bold');
+                        link.classList.add('text-white');
+                        link.classList.remove('cr-text-secondary');
+                    }
+                });
+            }
+
+            // Manipula o clique nos links de navegação
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+
+            // Lógica para mostrar a seção correta na carga inicial (baseada na URL ou padrão)
+            const initialTarget = window.location.hash ? window.location.hash.substring(1) : defaultSectionId;
+            showSection(initialTarget);
+            
+             // Função para simular um modal/alerta simples
+            window.alert = (message) => {
+                const modal = document.createElement('div');
+                modal.className = "fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 p-4";
+                modal.innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full text-center border-t-4 border-yellow-500">
+                        <h3 class="text-2xl font-bold mb-4 text-red-700">Atenção!</h3>
+                        <p class="mb-6">${message}</p>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-150" onclick="this.parentNode.parentNode.remove()">
+                            Entendi
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            };
+
+            // Substitui o alert padrão pelas chamadas acima
+            const desafioButton = document.querySelector('.banner-destaque button');
+            if(desafioButton) {
+                desafioButton.onclick = () => alert('Aberto o desafio! Boa sorte, Clashers!');
+            }
+
+        });
+    </script>
 </body>
 </html>
